@@ -5,6 +5,9 @@ export const ProgressBarContainer = styled.div`
   align-items: center;
   justify-content: center;
   height: 200px;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
   background-color: #fff;
 `;
 

@@ -8,7 +8,7 @@ import {
   ProgressBarContainer
 } from './styles';
 
-const ProgressBar = () => {
+const ProgressBar = ({ completed, setCompleted }) => {
   // Routing
   const history = useHistory();
   // Progressbar time, progressbar will end in 100s
@@ -18,8 +18,6 @@ const ProgressBar = () => {
   });
   // Percentage of progressbar
   const [percentage, setPercentage] = useState(0);
-  // If percentage is completed
-  const [completed, setCompleted] = useState(false);
 
   const startProgressBar = async () => {
     let { timer } = time;

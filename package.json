@@ -19,12 +19,14 @@
   "homepage": "https://github.com/alvlinarez/quinncia#readme",
   "dependencies": {
     "react": "16.13.1",
+    "react-circular-progressbar": "2.0.3",
     "react-dom": "16.13.1",
     "react-router-dom": "5.2.0",
     "styled-components": "^5.2.0"
   },
   "devDependencies": {
     "@babel/core": "7.11.6",
+    "@babel/polyfill": "7.11.5",
     "@babel/preset-env": "7.11.5",
     "@babel/preset-react": "7.10.4",
     "@babel/runtime": "7.11.2",

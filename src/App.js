@@ -1,7 +1,15 @@
 import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Home from './containers/Home';
+import { GlobalStyles } from './styles/GlobalStyles';
 
 export const App = () => {
   return (
-    <h1>React App</h1>
+    <BrowserRouter>
+      <GlobalStyles />
+      <Switch>
+        <Route exact path="/" component={Home} />
+      </Switch>
+    </BrowserRouter>
   );
 };

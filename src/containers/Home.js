@@ -8,10 +8,10 @@ const Home = () => {
   const [completed, setCompleted] = useState(false);
   return (
     <Layout>
-      <div>
+      <>
         <Game />
         <ProgressBar completed={completed} setCompleted={setCompleted} />
-      </div>
+      </>
     </Layout>
   );
 };

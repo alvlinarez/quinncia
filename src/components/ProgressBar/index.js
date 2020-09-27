@@ -14,7 +14,7 @@ const ProgressBar = ({ completed, setCompleted }) => {
   // Progressbar time, progressbar will end in 100s
   const [time, setTime] = useState({
     timer: 0,
-    timeLeft: 10
+    timeLeft: 100
   });
   // Percentage of progressbar
   const [percentage, setPercentage] = useState(0);
@@ -38,7 +38,7 @@ const ProgressBar = ({ completed, setCompleted }) => {
         // Loading completed
         setCompleted(true);
       }
-    }, 100);
+    }, 1000);
   };
 
   useEffect(() => {

@@ -7,6 +7,7 @@ Features:
 
 * Users can play a game while waiting for the task 
 to be done.
+* React, Styled Components
 
 [See app in production](https://quinncia-alg.netlify.app/)
 

@@ -1,6 +1,8 @@
 # Quinncia
 Website with a game as a loader
 
+![Quinncia Capture](.readme-static/capture.png)
+
 Features:
 
 * Users can play a game while waiting for the task 

@@ -58,7 +58,7 @@ module.exports = function (_env, argv) {
         {
           test: /\.svg$/,
           use: ['@svgr/webpack', 'url-loader']
-        },
+        }
       ]
     },
     resolve: {
@@ -101,26 +101,23 @@ module.exports = function (_env, argv) {
         new OptimizeCssAssetsPlugin()
       ],
       splitChunks: {
-        chunks: 'async',
-        name: true,
+        chunks: 'all',
+        minSize: 0,
+        maxInitialRequests: 20,
+        maxAsyncRequests: 20,
         cacheGroups: {
           vendors: {
-            name: 'vendors',
-            chunks: 'all',
-            reuseExistingChunk: true,
-            priority: 1,
-            filename: isDevelopment
-              ? 'assets/vendor.js'
-              : 'assets/vendor-[hash].js',
-            enforce: true,
-            test(module, chunks) {
-              const name = module.nameForCondition && module.nameForCondition();
-              return chunks.some(
-                (chunk) =>
-                  chunk.name !== 'vendors' &&
-                  /[\\/]node_modules[\\/]/.test(name)
-              );
+            test: /[\\/]node_modules[\\/]/,
+            name(module, chunks, cacheGroupKey) {
+              const packageName = module.context.match(
+                /[\\/]node_modules[\\/](.*?)([\\/]|$)/
+              )[1];
+              return `${cacheGroupKey}.${packageName.replace('@', '')}`;
             }
+          },
+          common: {
+            minChunks: 2,
+            priority: -10
           }
         }
       },

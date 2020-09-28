@@ -11,7 +11,9 @@ import {
 const ProgressBar = ({ completed, setCompleted }) => {
   // Routing
   const history = useHistory();
-  // Progressbar time, progressbar will end in 100s
+  // Progressbar will end in 25s
+  const TIME_PERCENTAGE = 250;
+  // State for Progressbar time
   const [time, setTime] = useState({
     timer: 0,
     timeLeft: 100
@@ -38,7 +40,7 @@ const ProgressBar = ({ completed, setCompleted }) => {
         // Loading completed
         setCompleted(true);
       }
-    }, 1000);
+    }, TIME_PERCENTAGE);
   };
 
   useEffect(() => {
